@@ -2,8 +2,8 @@
 
 .container {
   grid-area: Sky;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 11fr;
 
   .title {
     @extend .subTitle;

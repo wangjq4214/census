@@ -51,14 +51,35 @@ export default {
           name: firstDataMap[item.name],
         };
       });
+      const tempBlue = res.BlueSkyCount.data.map((item) => {
+        return {
+          ...item,
+          name: firstDataMap[item.name],
+        };
+      });
+      const tempBusiness = res.BusinessCount.data.map((item) => {
+        return {
+          ...item,
+          name: firstDataMap[item.name],
+        };
+      });
       // 获取某个类别详情
       const areaEventDetail = yield call(fetchAreaEventDetail, typeId);
       yield put({
         type: 'save',
         payload: {
           onLineEvent: tempOnLineEvent,
-          blueSkyCount: res.BlueSkyCount.data,
-          businessCount: res.BusinessCount.data,
+          blueSkyCount: tempBlue,
+          businessCount: tempBusiness,
+          areaEventDetail: areaEventDetail.data,
+        },
+      });
+    },
+    * handleDetails({ payload: { typeId } }, { call, put }) {
+      const areaEventDetail = yield call(fetchAreaEventDetail, typeId);
+      yield put({
+        type: 'save',
+        payload: {
           areaEventDetail: areaEventDetail.data,
         },
       });

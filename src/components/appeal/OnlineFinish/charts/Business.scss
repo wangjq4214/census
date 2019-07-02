@@ -1,9 +1,9 @@
 @import '../../../Basic.scss';
 
 .container {
-  grid-area: OnLineEvent;
+  grid-area: Business;
   display: grid;
-  grid-template-rows: 1fr 17fr;
+  grid-template-rows: 1fr 11fr;
 
   .title {
     @extend .subTitle;

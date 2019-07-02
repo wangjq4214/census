@@ -3,7 +3,7 @@
 .container {
   @extend .containerBorder;
   display: grid;
-  grid: "title title" 1fr "OnLineEvent Details" 6fr "Sky Business" 4fr
+  grid: "title title" 1fr "OnLineEvent Details" 10fr "Sky Business" 7fr
     / 1fr 1fr;
 
   .title {

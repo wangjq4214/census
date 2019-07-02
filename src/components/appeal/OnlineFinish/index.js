@@ -1,7 +1,8 @@
 import React from 'react';
 import OnLineEvent from './charts/OnLineEvent';
-import Details from './charts/Details'
-import Sky from './charts/Sky'
+import Details from './charts/Details';
+import Sky from './charts/Sky';
+import Business from './charts/Business'
 
 import styles from './index.scss';
 
@@ -12,6 +13,7 @@ function OnLineFinish() {
       <OnLineEvent/>
       <Details/>
       <Sky/>
+      <Business/>
     </div>
   );
 }
