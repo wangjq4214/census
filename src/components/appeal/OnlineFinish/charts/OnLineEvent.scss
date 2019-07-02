@@ -1,0 +1,11 @@
+@import '../../../Basic.scss';
+
+.container {
+  grid-area: OnLineEvent;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    @extend .subTitle;
+  }
+}

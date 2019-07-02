@@ -1,0 +1,14 @@
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #000833;
+}
+
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}

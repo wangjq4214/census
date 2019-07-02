@@ -1,0 +1,21 @@
+.normal {
+  font-family: Georgia, sans-serif;
+}
+
+.navBar {
+  width: 120vh;
+  height: 7.8vh;
+  margin: 0 auto;
+
+  .imgWarp {
+    height: 100%;
+    display: inline-block;
+
+    img {
+      width: auto;
+      height: auto;
+      max-height: 5.7vh;
+      margin: 0 -2.2vh;
+    }
+  }
+}
