@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'dva';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 
-import styles from './InTimeHandle.scss';
+import styles from './CityEventCount.scss';
 
-function InTimeHandle(props) {
-  const { inTimeHandle } = props;
+function CityEventCount(props) {
+  const { cityEventCount } = props;
   const [options, setOptions] = useState({});
   useEffect(() => {
-    if (inTimeHandle) {
+    if (cityEventCount) {
       setOptions({
         grid: {
-          top: 0,
+          top: 5,
         },
         tooltip: {
           trigger: 'item',
           formatter: '{b}：<br/>{c}',
         },
         xAxis: {
-          data: inTimeHandle.map(item => {
+          data: cityEventCount.map(item => {
             return item.name;
           }),
           axisLabel: {
@@ -47,8 +47,8 @@ function InTimeHandle(props) {
           axisLabel: {
             textStyle: {
               color: '#03c9db',
+              fontSize: 30,
             },
-            fontSize: 30,
           },
           splitLine: {
             show: false,
@@ -80,7 +80,7 @@ function InTimeHandle(props) {
               },
             },
             barWidth: 15,
-            data: inTimeHandle.map(item => {
+            data: cityEventCount.map(item => {
               return item.value;
             }),
           },
@@ -89,21 +89,18 @@ function InTimeHandle(props) {
     } else {
       setOptions({});
     }
-  }, [inTimeHandle]);
+  }, [cityEventCount]);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>实时区县办结案件统计</div>
-      <div>
-        <ReactEcharts
-          option={options}
-          style={{ width: '99%', height: '99%', padding: '1vh' }}
-        />
-      </div>
+    <div>
+      <ReactEcharts
+        option={options}
+        style={{ width: '99%', height: '99%', padding: '1vh' }}
+      />
     </div>
   );
 }
 
 export default connect(({ appeal }) => ({
-  inTimeHandle: appeal.inTimeHandle,
-}))(InTimeHandle);
+  cityEventCount: appeal.cityEventCount,
+}))(CityEventCount);

@@ -11,6 +11,13 @@ function DistributeEvent(props) {
   useEffect(() => {
     if (distributeEvent) {
       setOptions({
+        grid: {
+          top: 5,
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b}：<br/>{c}',
+        },
         xAxis: {
           data: distributeEvent.map(item => {
             return item.caseName;
@@ -40,6 +47,7 @@ function DistributeEvent(props) {
           axisLabel: {
             textStyle: {
               color: '#03c9db',
+              fontSize: 30,
             },
           },
           splitLine: {

@@ -6,6 +6,7 @@ import {
   fetchInTimeHandle,
   fetchMonitorCount,
   fetchAreaEventDetail,
+  fetchCityEventCount,
 } from '@/pages/appeal/service';
 import { firstDataMap } from '@/utils/config';
 
@@ -20,6 +21,7 @@ export default {
     distributeEvent: [],
     inTimeHandle: [],
     monitorCount: [],
+    cityEventCount: [],
   },
   reducers: {
     save(state, { payload: data }) {
@@ -34,6 +36,7 @@ export default {
       yield all([
         put({ type: 'handleOnLineFinish' }),
         put({ type: 'handleOnlineTotal' }),
+        put({ type: 'handleArea' }),
       ]);
     },
     * handleOnLineFinish(_, { all, call, put, select }) {
@@ -81,6 +84,15 @@ export default {
         type: 'save',
         payload: {
           areaEventDetail: areaEventDetail.data,
+        },
+      });
+    },
+    * handleArea(_, { call, put }) {
+      const cityEventCount = yield call(fetchCityEventCount);
+      yield put({
+        type: 'save',
+        payload: {
+          cityEventCount: cityEventCount.data,
         },
       });
     },

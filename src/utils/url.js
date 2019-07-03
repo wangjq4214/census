@@ -8,4 +8,5 @@ export const appealOnlineFinish = {
   DistributeEvent: `${baseUrl}bigScreenPreviewController/queryDistributeEvent`,
   InTimeHandle: `${baseUrl}bigScreenPreviewController/queryInTimeHandle`,
   MonitorCount: `${baseUrl}bigScreenPreviewController/queryMonitorCount`,
+  CityEventCount: `${baseUrl}bigScreenPreviewController/queryCityEventCount`,
 };

@@ -92,3 +92,12 @@ export function fetchMonitorCount() {
     }),
   });
 }
+
+export function fetchCityEventCount() {
+  const { CityEventCount } = appealOnlineFinish;
+  return request(CityEventCount, {
+    header: new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    }),
+  });
+}
