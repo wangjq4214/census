@@ -1,0 +1,11 @@
+@import "../../../Basic";
+
+.container {
+  grid-area: distribute;
+  display: grid;
+  grid-template-rows: 1fr 17fr;
+
+  .title {
+    @extend .subTitle;
+  }
+}

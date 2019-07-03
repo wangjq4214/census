@@ -90,10 +90,16 @@ export default {
         inTimeHandle: call(fetchInTimeHandle),
         monitorCount: call(fetchMonitorCount),
       });
+      const tempDis = res.distributeEvent.data.map(item => {
+        return {
+          ...item,
+          caseName: firstDataMap[item.caseName],
+        };
+      });
       yield put({
         type: 'save',
         payload: {
-          distributeEvent: res.distributeEvent.data,
+          distributeEvent: tempDis,
           inTimeHandle: res.inTimeHandle.data,
           monitorCount: res.monitorCount.data,
         },

@@ -1,0 +1,11 @@
+@import "../../../Basic";
+
+.container {
+  grid-area: inTimeHandle;
+  display: grid;
+  grid-template-rows: 1fr 13fr;
+
+  .title {
+    @extend .subTitle;
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../Basic";
+
+.container {
+  @extend .containerBorder;
+  grid: "title title" 1fr "distribute distribute" 10fr "inTimeHandle inTimeHandle" 7fr
+    / 1fr 1fr;
+
+  .title {
+    @extend .containerTitle;
+    grid-area: title;
+  }
+}
