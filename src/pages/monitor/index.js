@@ -1,15 +1,15 @@
+import React from 'react';
+import Area from '@/components/appeal/Area';
+import LeftTop from '@/components/monitor/LeftTop';
+
+import styles from './index.scss';
+
 export default function() {
   return (
-    <div>
-      <div/>
-      <ul>
-        <li>To get started, edit <code>src/pages/index.js</code> and save to reload.</li>
-        <li>
-          <a href="https://umijs.org/guide/getting-started.html">
-            Getting Started
-          </a>
-        </li>
-      </ul>
+    <div className={styles.container}>
+      {/*<LeftTop/>*/}
+      {/*<Area/>*/}
+      <iframe src="http://175.6.46.236:8023/test1/2.html" frameBorder="0" className={styles.ifStyle}/>
     </div>
   );
 }

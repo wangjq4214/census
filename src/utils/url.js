@@ -10,3 +10,7 @@ export const appealOnlineFinish = {
   MonitorCount: `${baseUrl}bigScreenPreviewController/queryMonitorCount`,
   CityEventCount: `${baseUrl}bigScreenPreviewController/queryCityEventCount`,
 };
+
+export const montiorUrl = {
+
+};

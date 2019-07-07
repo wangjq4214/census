@@ -49,7 +49,7 @@ function Sky(props) {
               show: 'true',
               position: 'outside',
               formatter: '{b}\n{d}%',
-              fontSize: 30,
+              fontSize: 25,
               color: ['#6b3dff', '#be32d0', '#0281fe', '#0099f5'],
             },
           },

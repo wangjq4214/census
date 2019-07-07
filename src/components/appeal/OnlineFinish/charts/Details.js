@@ -33,7 +33,7 @@ function Details(props) {
               show: 'true',
               position: 'outside',
               formatter: '{b}\n{d}%',
-              fontSize: 30,
+              fontSize: 25,
             },
           },
         ],

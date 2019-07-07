@@ -3,23 +3,23 @@ import { connect } from 'dva';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 
-import styles from './InTimeHandle.scss';
+import styles from './index.scss';
 
-function InTimeHandle(props) {
-  const { inTimeHandle } = props;
+function LeftTop(props) {
+  const { onLineEvent } = props;
   const [options, setOptions] = useState({});
   useEffect(() => {
-    if (inTimeHandle) {
+    if (onLineEvent) {
       setOptions({
         grid: {
-          top: 0,
+          top: 5,
         },
         tooltip: {
           trigger: 'item',
           formatter: '{b}：<br/>{c}',
         },
         xAxis: {
-          data: inTimeHandle.map(item => {
+          data: onLineEvent.map(item => {
             return item.name;
           }),
           axisLabel: {
@@ -47,8 +47,8 @@ function InTimeHandle(props) {
           axisLabel: {
             textStyle: {
               color: '#03c9db',
+              fontSize: 25,
             },
-            fontSize: 25,
           },
           splitLine: {
             show: false,
@@ -80,7 +80,7 @@ function InTimeHandle(props) {
               },
             },
             barWidth: 15,
-            data: inTimeHandle.map(item => {
+            data: onLineEvent.map(item => {
               return item.value;
             }),
           },
@@ -89,11 +89,11 @@ function InTimeHandle(props) {
     } else {
       setOptions({});
     }
-  }, [inTimeHandle]);
+  }, [onLineEvent]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>实时区县办结案件统计</div>
+      <div className={styles.title}>待办工单案件大类统计</div>
       <div>
         <ReactEcharts
           option={options}
@@ -105,5 +105,5 @@ function InTimeHandle(props) {
 }
 
 export default connect(({ appeal }) => ({
-  inTimeHandle: appeal.inTimeHandle,
-}))(InTimeHandle);
+  onLineEvent: appeal.onLineEvent,
+}))(LeftTop);

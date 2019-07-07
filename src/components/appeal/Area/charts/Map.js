@@ -29,7 +29,7 @@ function Map(props) {
   };
   const [options, setOptions] = useState({});
   useEffect(() => {
-    if (inTimeHandle.length === 0) {
+    if (inTimeHandle.length !== 0) {
       setOptions({
         tooltip: {
           trigger: 'item',
@@ -67,7 +67,7 @@ function Map(props) {
         },
         series: [
           {
-            name: 'pm2.5',
+            name: '事件总计',
             type: 'scatter',
             coordinateSystem: 'geo',
             data: convertData(inTimeHandle),
