@@ -33,13 +33,19 @@ function LeftTop(props) {
             show: false,
           },
           axisLine: {
-            show: false,
+            lineStyle: {
+              color: '#00204a',
+              width: 3,
+            },
           },
           z: 10,
         },
         yAxis: {
           axisLine: {
-            show: false,
+            lineStyle: {
+              color: '#00204a',
+              width: 3,
+            },
           },
           axisTick: {
             show: false,
@@ -59,16 +65,6 @@ function LeftTop(props) {
             type: 'bar',
             itemStyle: {
               normal: {
-                color: new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1,
-                  [
-                    { offset: 0, color: 'rgba(5,228,248,0.24)' },
-                    { offset: 1, color: 'rgba(8,175,255,0.3)' },
-                  ],
-                ),
-                barBorderRadius: 7.5,
-              },
-              emphasis: {
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
@@ -93,7 +89,7 @@ function LeftTop(props) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>待办工单案件大类统计</div>
+      <div className={styles.title}>在线办结案件</div>
       <div>
         <ReactEcharts
           option={options}

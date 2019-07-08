@@ -118,16 +118,4 @@ export default {
       });
     },
   },
-  subscriptions: {
-    setup({ dispatch, history }) {
-      return history.listen(({ pathname, query }) => {
-        if (pathname === '/appeal') {
-          dispatch({ type: 'fetch' });
-          setInterval(() => {
-            dispatch({ type: 'fetch' });
-          }, 10000);
-        }
-      });
-    },
-  },
 };

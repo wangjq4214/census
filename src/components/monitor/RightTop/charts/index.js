@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'dva';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 
-function CityEventCount(props) {
-  const { cityEventCount } = props;
+function LeftTop(props) {
+  const { hotEventDetail } = props;
   const [options, setOptions] = useState({});
   useEffect(() => {
-    if (cityEventCount) {
+    if (hotEventDetail) {
       setOptions({
         grid: {
           top: 5,
-          bottom: '20%',
         },
         tooltip: {
           trigger: 'item',
           formatter: '{b}：<br/>{c}',
         },
         xAxis: {
-          data: cityEventCount.map(item => {
-            return item.name;
+          data: hotEventDetail.map(item => {
+            return item.deptName;
           }),
           axisLabel: {
             rotate: 45,
@@ -37,21 +36,7 @@ function CityEventCount(props) {
           z: 10,
         },
         yAxis: {
-          axisLine: {
-            show: false,
-          },
-          axisTick: {
-            show: false,
-          },
-          axisLabel: {
-            textStyle: {
-              color: '#03c9db',
-              fontSize: 25,
-            },
-          },
-          splitLine: {
-            show: false,
-          },
+          show: false,
         },
         series: [
           {
@@ -69,8 +54,8 @@ function CityEventCount(props) {
               },
             },
             barWidth: 15,
-            data: cityEventCount.map(item => {
-              return item.value;
+            data: hotEventDetail.map(item => {
+              return item.total;
             }),
           },
         ],
@@ -78,10 +63,10 @@ function CityEventCount(props) {
     } else {
       setOptions({});
     }
-  }, [cityEventCount]);
+  }, [hotEventDetail]);
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'rgba(0, 72, 179, 0.12)', border: 'solid 0.1vh #306bec' }}>
       <ReactEcharts
         option={options}
         style={{ width: '99%', height: '99%', padding: '1vh' }}
@@ -90,6 +75,6 @@ function CityEventCount(props) {
   );
 }
 
-export default connect(({ appeal }) => ({
-  cityEventCount: appeal.cityEventCount,
-}))(CityEventCount);
+export default connect(({ monitor }) => ({
+  hotEventDetail: monitor.hotEventDetail,
+}))(LeftTop);

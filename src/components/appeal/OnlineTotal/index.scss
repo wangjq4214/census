@@ -2,6 +2,7 @@
 
 .container {
   @extend .containerBorder;
+  grid-area: OnLineTotal;
   display: grid;
   grid: 'title title' 1fr 'distribute distribute' 10fr 'inTimeHandle monitor' 7fr
     / 1fr 1fr;

@@ -12,5 +12,7 @@ export const appealOnlineFinish = {
 };
 
 export const montiorUrl = {
-
+  HotEvent: `${baseUrl}bigScreenPreviewController/queryHotEvent`,
+  HotEventDetail: `${baseUrl}bigScreenPreviewController/queryHotEventDetail`,
+  InTimeSum: `${baseUrl}cmsDataController/getInTimeSum`,
 };

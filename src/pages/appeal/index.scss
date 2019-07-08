@@ -1,7 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 92.2vh);
+  grid: 'OnLineFinish Area OnLineTotal' 92.2vh / 1fr 1fr 1fr;
   grid-column-gap: 2vh;
   color: white;
 }

@@ -4,7 +4,7 @@
   @extend .containerBorder;
   display: grid;
   grid-template-rows: 1fr 8fr;
-  grid-area: leftTop;
+  grid-area: leftTop / leftTop / leftTop / leftTop;;
 
   .title {
     @extend .containerTitle;

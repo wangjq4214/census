@@ -27,7 +27,7 @@ function DistributeEvent(props) {
             textStyle: {
               color: 'rgba(116,218,234,0.47)',
             },
-            fontSize: 30,
+            fontSize: 25,
           },
           axisTick: {
             show: false,
@@ -47,7 +47,7 @@ function DistributeEvent(props) {
           axisLabel: {
             textStyle: {
               color: '#03c9db',
-              fontSize: 30,
+              fontSize: 25,
             },
           },
           splitLine: {

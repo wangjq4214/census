@@ -8,6 +8,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "dva": "^2.6.0-beta.6",
     "dva-logger": "^1.0.0",
     "echarts": "^4.2.1",

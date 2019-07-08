@@ -1,0 +1,17 @@
+@import "../../Basic";
+
+.container {
+  @extend .containerBorder;
+  grid-area: leftb;
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+
+  .title {
+    @extend .containerTitle
+  }
+
+  .mainContainer {
+    display: grid;
+    //grid-template-columns: 1fr 1fr;
+  }
+}

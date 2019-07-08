@@ -2,8 +2,9 @@
 
 .container {
   @extend .containerBorder;
+  grid-area: OnLineFinish;
   display: grid;
-  grid: "title title" 1fr "OnLineEvent Details" 10fr "Sky Business" 7fr
+  grid: "title title" 1fr "OnLineEvent Details" 9fr "Sky Business" 7fr
     / 1fr 1fr;
 
   .title {
