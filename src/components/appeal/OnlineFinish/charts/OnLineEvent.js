@@ -42,7 +42,7 @@ class OnLineEvent extends React.Component {
     }
   }
 
-  chartDetails = (e) => {
+  chartDetails = e => {
     this.props.dispatch({
       type: 'appeal/handleDetails',
       payload: {
@@ -59,7 +59,7 @@ class OnLineEvent extends React.Component {
           <ReactEcharts
             option={this.options}
             style={{ width: '100%', height: '100%', padding: '1vh' }}
-            onEvents={{ 'click': this.chartDetails }}
+            onEvents={{ click: this.chartDetails }}
           />
         </div>
       </div>

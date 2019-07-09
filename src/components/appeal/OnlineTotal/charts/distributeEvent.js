@@ -13,6 +13,7 @@ function DistributeEvent(props) {
       setOptions({
         grid: {
           top: 5,
+          bottom: '20%',
         },
         tooltip: {
           trigger: 'item',
@@ -27,7 +28,7 @@ function DistributeEvent(props) {
             textStyle: {
               color: 'rgba(116,218,234,0.47)',
             },
-            fontSize: 25,
+            fontSize: 20,
           },
           axisTick: {
             show: false,
@@ -59,23 +60,17 @@ function DistributeEvent(props) {
             type: 'bar',
             itemStyle: {
               normal: {
-                color: new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1,
-                  [
-                    { offset: 0, color: 'rgba(5,228,248,0.24)' },
-                    { offset: 1, color: 'rgba(8,175,255,0.3)' },
-                  ],
-                ),
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: 'rgba(5,228,248,0.24)' },
+                  { offset: 1, color: 'rgba(8,175,255,0.3)' },
+                ]),
                 barBorderRadius: 7.5,
               },
               emphasis: {
-                color: new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1,
-                  [
-                    { offset: 0, color: '#06e4f9' },
-                    { offset: 1, color: '#08afff' },
-                  ],
-                ),
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: '#06e4f9' },
+                  { offset: 1, color: '#08afff' },
+                ]),
                 barBorderRadius: 7.5,
               },
             },
@@ -95,10 +90,7 @@ function DistributeEvent(props) {
     <div className={styles.container}>
       <div className={styles.title}>待办工单案件大类统计</div>
       <div>
-        <ReactEcharts
-          option={options}
-          style={{ width: '99%', height: '99%', padding: '1vh' }}
-        />
+        <ReactEcharts option={options} style={{ width: '99%', height: '99%', padding: '1vh' }} />
       </div>
     </div>
   );

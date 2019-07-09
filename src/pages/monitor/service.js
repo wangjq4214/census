@@ -28,12 +28,43 @@ export function fetHotEventDetail(typeId) {
   });
 }
 
+/**
+ * 实时坐席状态
+ * @returns {Promise<*>}
+ */
 export function fetchInTimeSum() {
   const { InTimeSum } = montiorUrl;
-  const form = new FormData();
+  let form = new FormData();
   form.append('token', '1');
   return request(InTimeSum, {
     method: 'POST',
     body: form,
+  });
+}
+
+/**
+ * 接通率等数据
+ * @returns {Promise<*>}
+ */
+export function fetchHistoryVdn() {
+  const { HistoryVdn } = montiorUrl;
+  let form = new FormData();
+  form.append('token', '1');
+  return request(HistoryVdn, {
+    method: 'POST',
+    body: form,
+  });
+}
+
+/**
+ * 上月数据统计
+ * @returns {Promise<*>}
+ */
+export function fetchCaseTypeCount() {
+  const { CaseTypeCount } = montiorUrl;
+  return request(CaseTypeCount, {
+    header: new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    }),
   });
 }

@@ -10,8 +10,12 @@ const makeSer = (data) => {
     temp.push({
       name: phoneState[key],
       type: 'line',
-      data: data[key],
+      data: data[key].slice(-6),
       smooth: true,
+      label: {
+        show: true,
+        position: 'right',
+      },
     });
   }
   return temp;

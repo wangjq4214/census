@@ -15,4 +15,6 @@ export const montiorUrl = {
   HotEvent: `${baseUrl}bigScreenPreviewController/queryHotEvent`,
   HotEventDetail: `${baseUrl}bigScreenPreviewController/queryHotEventDetail`,
   InTimeSum: `${baseUrl}cmsDataController/getInTimeSum`,
+  HistoryVdn: `${baseUrl}cmsDataController/getHistoryVdn`,
+  CaseTypeCount: `${baseUrl}bigScreenPreviewController/queryCaseTypeCount`,
 };

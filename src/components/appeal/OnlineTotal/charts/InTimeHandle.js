@@ -13,6 +13,7 @@ function InTimeHandle(props) {
       setOptions({
         grid: {
           top: 0,
+          bottom: '20%',
         },
         tooltip: {
           trigger: 'item',
@@ -59,23 +60,17 @@ function InTimeHandle(props) {
             type: 'bar',
             itemStyle: {
               normal: {
-                color: new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1,
-                  [
-                    { offset: 0, color: 'rgba(5,228,248,0.24)' },
-                    { offset: 1, color: 'rgba(8,175,255,0.3)' },
-                  ],
-                ),
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: 'rgba(5,228,248,0.24)' },
+                  { offset: 1, color: 'rgba(8,175,255,0.3)' },
+                ]),
                 barBorderRadius: 7.5,
               },
               emphasis: {
-                color: new echarts.graphic.LinearGradient(
-                  0, 0, 0, 1,
-                  [
-                    { offset: 0, color: '#06e4f9' },
-                    { offset: 1, color: '#08afff' },
-                  ],
-                ),
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: '#06e4f9' },
+                  { offset: 1, color: '#08afff' },
+                ]),
                 barBorderRadius: 7.5,
               },
             },
@@ -95,10 +90,7 @@ function InTimeHandle(props) {
     <div className={styles.container}>
       <div className={styles.title}>实时区县办结案件统计</div>
       <div>
-        <ReactEcharts
-          option={options}
-          style={{ width: '99%', height: '99%', padding: '1vh' }}
-        />
+        <ReactEcharts option={options} style={{ width: '99%', height: '99%', padding: '1vh' }} />
       </div>
     </div>
   );

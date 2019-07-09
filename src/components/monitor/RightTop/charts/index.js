@@ -11,6 +11,7 @@ function LeftTop(props) {
       setOptions({
         grid: {
           top: 5,
+          bottom: '20%',
         },
         tooltip: {
           trigger: 'item',
@@ -25,7 +26,7 @@ function LeftTop(props) {
             textStyle: {
               color: 'rgba(116,218,234,0.47)',
             },
-            fontSize: 25,
+            fontSize: 20,
           },
           axisTick: {
             show: false,

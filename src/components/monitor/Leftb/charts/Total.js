@@ -3,24 +3,23 @@ import { connect } from 'dva';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 
-import styles from './index.scss';
-
-function LeftTop(props) {
-  const { onLineEvent } = props;
+function Total(props) {
+  const { caseTypeCount } = props;
   const [options, setOptions] = useState({});
+
   useEffect(() => {
-    if (onLineEvent) {
+    if (caseTypeCount) {
       setOptions({
         grid: {
           top: 5,
-          bottom: '20%',
+          left: '20%',
         },
         tooltip: {
           trigger: 'item',
           formatter: '{b}：<br/>{c}',
         },
-        xAxis: {
-          data: onLineEvent.map(item => {
+        yAxis: {
+          data: caseTypeCount.map(item => {
             return item.name;
           }),
           axisLabel: {
@@ -41,7 +40,7 @@ function LeftTop(props) {
           },
           z: 10,
         },
-        yAxis: {
+        xAxis: {
           axisLine: {
             lineStyle: {
               color: '#00204a',
@@ -69,15 +68,15 @@ function LeftTop(props) {
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
-                    { offset: 0, color: '#06e4f9' },
-                    { offset: 1, color: '#08afff' },
+                    { offset: 0, color: '#fdda15' },
+                    { offset: 1, color: '#f58a01' },
                   ],
                 ),
                 barBorderRadius: 7.5,
               },
             },
             barWidth: 15,
-            data: onLineEvent.map(item => {
+            data: caseTypeCount.map(item => {
               return item.value;
             }),
           },
@@ -86,21 +85,17 @@ function LeftTop(props) {
     } else {
       setOptions({});
     }
-  }, [onLineEvent]);
-
+  }, [caseTypeCount]);
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>在线办结案件</div>
-      <div>
-        <ReactEcharts
-          option={options}
-          style={{ width: '99%', height: '99%', padding: '1vh' }}
-        />
-      </div>
+    <div>
+      <ReactEcharts
+        option={options}
+        style={{ width: '99%', height: '99%', padding: '1vh' }}
+      />
     </div>
   );
 }
 
-export default connect(({ appeal }) => ({
-  onLineEvent: appeal.onLineEvent,
-}))(LeftTop);
+export default connect(({ monitor }) => ({
+  caseTypeCount: monitor.caseTypeCount,
+}))(Total);

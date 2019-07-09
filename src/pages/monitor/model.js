@@ -1,4 +1,10 @@
-import { fetchHotEvent, fetHotEventDetail, fetchInTimeSum } from '@/pages/monitor/service';
+import {
+  fetchHotEvent,
+  fetHotEventDetail,
+  fetchInTimeSum,
+  fetchHistoryVdn,
+  fetchCaseTypeCount,
+} from '@/pages/monitor/service';
 import { firstDataMap } from '@/utils/config';
 
 export default {
@@ -14,6 +20,15 @@ export default {
       'IDX_01_04_011': [],
       'IDX_01_04_004': [],
     },
+    historyVdn: [
+      {
+        val: 0,
+      },
+      {
+        val: 0,
+      },
+    ],
+    caseTypeCount: [],
   },
   reducers: {
     save(state, { payload: data }) {
@@ -28,6 +43,7 @@ export default {
       yield all([
         put({ type: 'handleHotEvent' }),
         put({ type: 'handleInTimeSum' }),
+        put({ type: 'handleCaseTypeCount' }),
       ]);
     },
     * handleHotEvent(_, { all, call, put }) {
@@ -64,29 +80,29 @@ export default {
     * handleInTimeSum(_, { select, all, call, put }) {
       const res = yield all({
         inTimeSum: call(fetchInTimeSum),
+        historyVdn: call(fetchHistoryVdn),
       });
       const { phoneState } = yield select(state => state.monitor);
+      const tempPhone = JSON.parse(JSON.stringify(phoneState));
       res.inTimeSum.result[0].idxs.forEach((item => {
-        phoneState[item.id].push(parseInt(item.val));
+        tempPhone[item.id].push(parseInt(item.val));
       }));
+      const temp = res.historyVdn.result[0].idxs;
       yield put({
         type: 'save',
         payload: {
-          phoneState,
+          phoneState: tempPhone,
+          historyVdn: [temp[0], temp[1]],
         },
       });
     },
-  },
-  subscriptions: {
-    setup({ dispatch, history }) {
-      return history.listen(({ pathname, query }) => {
-        if (pathname === '/monitor') {
-          dispatch({ type: 'fetch' });
-          dispatch({ type: 'appeal/fetch' });
-          setInterval(() => {
-            dispatch({ type: 'fetch' });
-          }, 10000);
-        }
+    * handleCaseTypeCount(_, { call, put }) {
+      const res = yield call(fetchCaseTypeCount);
+      yield put({
+        type: 'save',
+        payload: {
+          caseTypeCount: res.data,
+        },
       });
     },
   },

@@ -26,7 +26,7 @@ function CityEventCount(props) {
             textStyle: {
               color: 'rgba(116,218,234,0.47)',
             },
-            fontSize: 25,
+            fontSize: 20,
           },
           axisTick: {
             show: false,
