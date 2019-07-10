@@ -3,7 +3,7 @@ import { connect } from 'dva';
 
 import styles from './MonitorCount.scss';
 import ReactEcharts from 'echarts-for-react';
-import { OnlineFinishBottom } from '@/utils/chartColor';
+import { OnlineTotalBottom } from '@/utils/chartColor';
 
 function MonitorCount(props) {
   const { monitorCount } = props;
@@ -21,7 +21,7 @@ function MonitorCount(props) {
               y: 0,
               x2: 0,
               y2: 1,
-              colorStops: OnlineFinishBottom[index % OnlineFinishBottom.length],
+              colorStops: OnlineTotalBottom[index % OnlineTotalBottom.length],
             },
           },
         };

@@ -32,3 +32,21 @@ export const OnlineFinishBottom = [
     offset: 1, color: '#5c43f2',
   }],
 ];
+
+export const OnlineTotalBottom = [
+  [{
+    offset: 0, color: '#bb39b9',
+  }, {
+    offset: 1, color: '#cb0e79',
+  }],
+  [{
+    offset: 0, color: '#fd8a5c',
+  }, {
+    offset: 1, color: '#eaef05',
+  }],
+  [{
+    offset: 0, color: '#0083ff',
+  }, {
+    offset: 1, color: '#00f7ff',
+  }],
+];

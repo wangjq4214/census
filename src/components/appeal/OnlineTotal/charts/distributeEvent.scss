@@ -3,7 +3,7 @@
 .container {
   grid-area: distribute;
   display: grid;
-  grid-template-rows: 1fr 17fr;
+  grid-template-rows: 1fr 15fr;
 
   .title {
     @extend .subTitle;

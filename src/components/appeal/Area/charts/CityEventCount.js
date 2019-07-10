@@ -65,10 +65,10 @@ function CityEventCount(props) {
                     { offset: 1, color: '#08afff' },
                   ],
                 ),
-                barBorderRadius: 7.5,
+                barBorderRadius: 9,
               },
             },
-            barWidth: 15,
+            barWidth: 18,
             data: cityEventCount.map(item => {
               return item.value;
             }),

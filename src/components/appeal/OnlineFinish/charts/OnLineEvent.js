@@ -58,7 +58,7 @@ class OnLineEvent extends React.Component {
         <div>
           <ReactEcharts
             option={this.options}
-            style={{ width: '100%', height: '100%', padding: '1vh' }}
+            style={{ width: '99%', height: '99%', padding: '1vh' }}
             onEvents={{ click: this.chartDetails }}
           />
         </div>

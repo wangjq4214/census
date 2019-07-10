@@ -48,7 +48,7 @@ function Details(props) {
       <div>
         <ReactEcharts
           option={options}
-          style={{ width: '100%', height: '99%', padding: '1vh' }}
+          style={{ width: '99%', height: '99%', padding: '1vh' }}
         />
       </div>
     </div>

@@ -71,10 +71,10 @@ function DistributeEvent(props) {
                   { offset: 0, color: '#06e4f9' },
                   { offset: 1, color: '#08afff' },
                 ]),
-                barBorderRadius: 7.5,
+                barBorderRadius: 9,
               },
             },
-            barWidth: 15,
+            barWidth: 18,
             data: distributeEvent.map(item => {
               return item.total;
             }),

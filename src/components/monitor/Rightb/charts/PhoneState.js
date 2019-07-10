@@ -25,6 +25,12 @@ class PhoneState extends React.Component {
   get options() {
     const { phoneState } = this.props;
     return {
+      legend: {
+        data: ['示闲', '示忙', '通话', '事后', '等待'],
+        textStyle: {
+          color: '#ffffff'
+        },
+      },
       color: ['#f6504a', '#2fd55a', '#b34fff', '#4a3eff', '#f18be9'],
       tooltip: {
         trigger: 'axis',

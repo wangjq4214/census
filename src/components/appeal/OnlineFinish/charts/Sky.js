@@ -65,7 +65,7 @@ function Sky(props) {
       <div>
         <ReactEcharts
           option={options}
-          style={{ width: '99%', height: '100%', padding: '1vh' }}
+          style={{ width: '99%', height: '99%', padding: '1vh' }}
         />
       </div>
     </div>

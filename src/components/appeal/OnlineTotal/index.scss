@@ -4,7 +4,7 @@
   @extend .containerBorder;
   grid-area: OnLineTotal;
   display: grid;
-  grid: 'title title' 1fr 'distribute distribute' 10fr 'inTimeHandle monitor' 7fr
+  grid: 'title title' 0.5fr 'distribute distribute' 3fr 'inTimeHandle monitor' 3fr
     / 1fr 1fr;
 
   .title {

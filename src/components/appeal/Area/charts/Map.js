@@ -27,6 +27,14 @@ function Map(props) {
     }
     return res;
   };
+  const findMax = (data) => {
+    let temp = [];
+    for (let i = 0; i < data.length; i++) {
+      temp.push(data[i].value);
+    }
+
+    return Math.max(...temp);
+  };
   const [options, setOptions] = useState({});
   useEffect(() => {
     if (inTimeHandle.length !== 0) {
@@ -39,10 +47,10 @@ function Map(props) {
         },
         visualMap: {
           min: 0,
-          max: 200,
+          max: findMax(inTimeHandle),
           calculable: true,
           inRange: {
-            color: ['#1177b7', '#0eb6fc'],
+            color: ['#33FF33', '#FFFF00', '#CC0000'],
           },
           textStyle: {
             color: '#fff',
@@ -57,7 +65,7 @@ function Map(props) {
           },
           itemStyle: {
             normal: {
-              areaColor: '#171b50',
+              areaColor: '#0067ee',
               borderColor: '#111',
             },
             emphasis: {
@@ -71,7 +79,7 @@ function Map(props) {
             type: 'scatter',
             coordinateSystem: 'geo',
             data: convertData(inTimeHandle),
-            symbolSize: 12,
+            symbolSize: 25,
             label: {
               normal: {
                 show: false,
